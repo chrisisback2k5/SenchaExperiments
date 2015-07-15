@@ -1,6 +1,13 @@
 Ext.define('SechnaExperiments.view.login.Login', {// #1
     extend: 'Ext.window.Window', // #2
     xtype: 'login-dialog', // #3
+    
+    controller: 'login',
+    
+    requires: [
+        'SechnaExperiments.view.login.LoginController'
+    ],
+    
     autoShow: true, // #4
     height: 180, // #5
     width: 360,
@@ -18,6 +25,7 @@ Ext.define('SechnaExperiments.view.login.Login', {// #1
         {
             xtype: 'form', //#14
             bodyPadding: 15, //#15
+            reference: 'form',
             defaults: {//#16
                 xtype: 'textfield', //#17
                 anchor: '100%', //#18
@@ -56,13 +64,19 @@ Ext.define('SechnaExperiments.view.login.Login', {// #1
                 {
                     xtype: 'button', //#26
                     iconCls: 'fa fa-times fa-lg',
-                    text: 'Cancel'
+                    text: 'Cancel',
+                    listeners: {
+                        click: 'onButtonClickCancel'
+                    }
                 },
                 {
                     xtype: 'button', //#27
                     formBind: true, //#28
                     iconCls: 'fa fa-sign-in fa-lg',
-                    text: 'Submit'
+                    text: 'Submit',
+                    listeners: {
+                        click: 'onButtonClickSubmit'
+                    }
                 }
             ]
         }
