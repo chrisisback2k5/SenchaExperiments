@@ -1,2 +1,2 @@
-Compass.add_project_configuration('../../../../../sass/config.rb')
-cache_path = '/Users/CV/GitHub/SenchaExperiments/build/.sass-cache'
+Compass.add_project_configuration('..\..\..\..\..\sass\config.rb')
+cache_path = 'C:\Users\Chris\Documents\GitHub\SenchaExperiments/build/.sass-cache'
