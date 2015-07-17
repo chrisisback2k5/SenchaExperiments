@@ -1,104 +1,30 @@
-/**
- * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
 Ext.define('SechnaExperiments.view.main.Main', {
-    extend: 'Ext.tab.Panel',
-    xtype: 'app-main',
-
-    requires: [
-        'Ext.plugin.Viewport',
-        'Ext.window.MessageBox',
-
-        'SechnaExperiments.view.main.MainController',
-        'SechnaExperiments.view.main.MainModel',
-        'SechnaExperiments.view.main.List'
-    ],
-
     controller: 'main',
-    viewModel: 'main',
-
-    ui: 'navigation',
-
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
+    extend: 'Ext.container.Container',
+    plugins: 'viewport',
+    xtype: 'app-main',
+    viewModel: {
+        type: 'main' //#3
     },
-
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
-
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
-
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
-                },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
-                }
-            }
-        }
-    },
-
+    requires: [//#1
+        'SechnaExperiments.view.main.Header',
+        'SechnaExperiments.view.main.Footer',
+        'SechnaExperiments.view.main.Panel',
+        'SechnaExperiments.view.main.MainController'
+    ],
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
+            xtype: 'appheader', // #2
+            region: 'north'
+        },{
+            region: 'center', // #1
+            xtype: 'mainpanel'
+        },{
+            xtype: 'appfooter', // #3
+            region: 'south'
+        }, {
+            xtype: 'container', // #4
+            region: 'west',
+            width: 200,
+            split: true
         }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
 });

@@ -10,10 +10,15 @@ Ext.define('SechnaExperiments.Application', {
         // TODO: add global / shared stores here
     ],
     launch: function () {
-        Ext.widget('login-dialog'); //#1
+        var login = Ext.widget('login-dialog', {
+            store: 'DER BRAND'
+        }); //#1
+        console.log(login.getStore());
+        Ext.tip.QuickTipManager.init();
     },
     views: [
-        'login.Login'
+        'login.Login',
+        'main.Main'
     ],
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',

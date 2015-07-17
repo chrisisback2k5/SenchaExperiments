@@ -1,16 +1,10 @@
-/**
- * This class is the view model for the Main view of the application.
- */
-Ext.define('SechnaExperiments.view.main.MainModel', {
-    extend: 'Ext.app.ViewModel',
-
-    alias: 'viewmodel.main',
-
+Ext.define('SechnaExperiments.view.main.MainModel', {//#1
+    extend: 'Ext.app.ViewModel', //#2
+    alias: 'viewmodel.main', //#3
     data: {
-        name: 'SechnaExperiments',
-
-        loremIpsum: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        name: 'Packt', //#4
+        appName: 'DVD Rental Store', //#5
+        appHeaderIcon: '<span class="fa fa-desktop fa-lg app-header - logo">', //#6
+        footer: 'Mastering ExtJS book - Loiane Groner -http://packtpub.com' //#7
     }
-
-    //TODO - add data, formulas and/or methods to support your view
 });

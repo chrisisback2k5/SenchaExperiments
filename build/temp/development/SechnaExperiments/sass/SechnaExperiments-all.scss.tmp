@@ -877,12 +877,16 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-sechnaexperiments-application: dynamic(true);;
 $include-sechnaexperiments-store-personnel: dynamic(true);;
+$include-sechnaexperiments-view-login-capslocktooltip: dynamic(true);;
 $include-sechnaexperiments-view-login-login: dynamic(true);;
 $include-sechnaexperiments-view-login-logincontroller: dynamic(true);;
+$include-sechnaexperiments-view-main-footer: dynamic(true);;
+$include-sechnaexperiments-view-main-header: dynamic(true);;
 $include-sechnaexperiments-view-main-list: dynamic(true);;
 $include-sechnaexperiments-view-main-main: dynamic(true);;
 $include-sechnaexperiments-view-main-maincontroller: dynamic(true);;
 $include-sechnaexperiments-view-main-mainmodel: dynamic(true);;
+$include-sechnaexperiments-view-main-panel: dynamic(true);;
 
 
 /* ======================== ETC ======================== */
